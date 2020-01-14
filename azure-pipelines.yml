@@ -20,7 +20,9 @@ steps:
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
-
+- task: intentional-failure@1
+  inputs:
+    failtype: 'Always'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
